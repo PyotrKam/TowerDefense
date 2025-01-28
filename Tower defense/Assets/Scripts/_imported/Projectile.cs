@@ -92,7 +92,8 @@ namespace SpaceShooter
         public void SetParentShooter(Destructible parent)
         {
             m_Parent = parent;
-        }
+        }     
+
     }
 }
 
