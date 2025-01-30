@@ -168,16 +168,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 99143535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fe15b628c3bca418f36ede2310100b, type: 3}
+  m_Script: {fileID: 11500000, guid: 120bcb9efdb085f468a1e973155d6d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_path: {fileID: 273230664}
-  m_EntityPrefabs:
-  - {fileID: 8249948575139669391, guid: 7fa2367b9786a7747b22a41b86a3e3be, type: 3}
   m_Area: {fileID: 789955025}
   m_SpawnMode: 1
   m_NumSpawns: 3
-  m_RespawnTime: 10
+  m_RespawnTime: 1
+  m_EnemyPrefab: {fileID: -2069825927851586324, guid: 7fa2367b9786a7747b22a41b86a3e3be, type: 3}
+  m_path: {fileID: 273230664}
+  m_EnemyAssets:
+  - {fileID: 11400000, guid: f2b8762633d5d0d47838eab052df94b1, type: 2}
 --- !u!114 &99143538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,16 +188,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 99143535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2fe15b628c3bca418f36ede2310100b, type: 3}
+  m_Script: {fileID: 11500000, guid: 120bcb9efdb085f468a1e973155d6d51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_path: {fileID: 353224706}
-  m_EntityPrefabs:
-  - {fileID: 8249948575139669391, guid: 7fa2367b9786a7747b22a41b86a3e3be, type: 3}
   m_Area: {fileID: 789955025}
   m_SpawnMode: 1
   m_NumSpawns: 3
-  m_RespawnTime: 10
+  m_RespawnTime: 1
+  m_EnemyPrefab: {fileID: -2069825927851586324, guid: 7fa2367b9786a7747b22a41b86a3e3be, type: 3}
+  m_path: {fileID: 353224706}
+  m_EnemyAssets:
+  - {fileID: 11400000, guid: 58c912312781cbd4ab9aa3de9744e97a, type: 2}
 --- !u!1 &110870312
 GameObject:
   m_ObjectHideFlags: 0
