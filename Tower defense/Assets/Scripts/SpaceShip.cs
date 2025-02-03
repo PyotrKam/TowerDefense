@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TowerDefence;
 using Unity.Profiling;
 using UnityEngine;
 
@@ -17,7 +19,7 @@ namespace SpaceShooter
         /// </summary>
         [Header("Space ship")]
         [SerializeField] private float m_Mass;
-
+                
         /// <summary>
         /// Толкающая вперед сила.
         /// </summary>
@@ -221,5 +223,11 @@ namespace SpaceShooter
         }
 
         */
+
+        public void Use(EnemyAsset asset)
+        {
+            m_MaxLinearVelocity = asset.moveSpeed;
+            base.Use(asset);
+        }
     }
 }

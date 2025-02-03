@@ -174,7 +174,7 @@ MonoBehaviour:
   m_Area: {fileID: 789955025}
   m_SpawnMode: 1
   m_NumSpawns: 3
-  m_RespawnTime: 1
+  m_RespawnTime: 5
   m_EnemyPrefab: {fileID: -2069825927851586324, guid: 7fa2367b9786a7747b22a41b86a3e3be, type: 3}
   m_path: {fileID: 273230664}
   m_EnemyAssets:
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Area: {fileID: 789955025}
   m_SpawnMode: 1
   m_NumSpawns: 3
-  m_RespawnTime: 1
+  m_RespawnTime: 5
   m_EnemyPrefab: {fileID: -2069825927851586324, guid: 7fa2367b9786a7747b22a41b86a3e3be, type: 3}
   m_path: {fileID: 353224706}
   m_EnemyAssets:

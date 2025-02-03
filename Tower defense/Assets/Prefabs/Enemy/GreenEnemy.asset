@@ -10,6 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 670fd3f437cf438469053c47d549bd54, type: 3}
-  m_Name: RedEnemy
+  m_Name: GreenEnemy
   m_EditorClassIdentifier: 
-  color: {r: 1, g: 0, b: 0, a: 1}
+  color: {r: 0.4264151, g: 0.36929157, b: 0.36929157, a: 1}
+  spriteScale: {x: 6, y: 6}
+  animations: {fileID: 9100000, guid: db8a2b3c6b3e4504abb49749ecacca8e, type: 2}
+  moveSpeed: 5
+  hp: 9
+  score: 1
+  radius: 0.4
