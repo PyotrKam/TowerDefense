@@ -12,6 +12,8 @@ namespace SpaceShooter
     {
 
         [SerializeField] private int m_NumLives;
+        public int NumLives { get { return m_NumLives; } }
+
         [SerializeField] private SpaceShip m_Ship;
         public SpaceShip ActiveShip => m_Ship;
 
@@ -38,7 +40,7 @@ namespace SpaceShooter
                 LevelSequenceController.Instance.FinishCurrentLevel(false);
         }
 
-        internal void TakeDamage(int m_damage)
+        protected void TakeDamage(int m_damage)
         {
             m_NumLives -= m_damage;
             if (m_NumLives <= 0)
