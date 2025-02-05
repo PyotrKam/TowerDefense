@@ -8,27 +8,19 @@ namespace TowerDefence
 {
     public class TowerBuyControl : MonoBehaviour
     {
-        [System.Serializable]
-
-        public class TowerAsset
-        {
-            public int goldCost = 15;
-            public Sprite towerGUI;
-        }
 
         [SerializeField] private TowerAsset m_ta;
         [SerializeField] private Text m_text;
         [SerializeField] private Button m_button;
+        [SerializeField] private Transform buildSite;
+        public Transform BuildSite { set { buildSite = value; } }
 
-        private void Awake()
-        {
-            TDPlayer.OnGoldUpdate += GoldStatusChek;
-        }
-         
         private void Start()
         {
+            TDPlayer.GoldUpdateSubscribe(GoldStatusChek);
+        
             m_text.text = m_ta.goldCost.ToString();
-            m_button.GetComponent<Image>().sprite = m_ta.towerGUI;
+            m_button.GetComponent<Image>().sprite = m_ta.GUISprite;
         }
 
         private void GoldStatusChek(int gold)
@@ -39,10 +31,12 @@ namespace TowerDefence
                 m_text.color = m_button.interactable ? Color.white : Color.red;
             }
         }
+        
+        public void Buy()
+        {
+            TDPlayer.Instance.TryBuild(m_ta, buildSite);
+        }
 
     }
-
-
-
 }
 
