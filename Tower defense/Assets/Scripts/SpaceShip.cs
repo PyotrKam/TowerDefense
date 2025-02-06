@@ -224,7 +224,7 @@ namespace SpaceShooter
 
         */
 
-        public void Use(EnemyAsset asset)
+        public override void Use(EnemyAsset asset)
         {
             m_MaxLinearVelocity = asset.moveSpeed;
             base.Use(asset);

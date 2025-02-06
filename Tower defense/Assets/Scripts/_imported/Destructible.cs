@@ -132,7 +132,7 @@ namespace SpaceShooter
 
         #endregion
 
-        protected void Use(EnemyAsset asset)
+        public virtual void  Use(EnemyAsset asset)
         {
             m_HitPoints = asset.hp;
             m_ScoreValue = asset.score;
