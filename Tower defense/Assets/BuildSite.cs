@@ -2,17 +2,21 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using System;
 
-public class BuildSite : MonoBehaviour, IPointerDownHandler
+namespace TowerDefence
 {
-    public static event Action<Transform> OnClickEvent;
-
-    protected void InvokeNullEvent()
+    public class BuildSite : MonoBehaviour, IPointerDownHandler
     {
-        OnClickEvent(null);
+        public static event Action<Transform> OnClickEvent;
+
+        public static void HideControls()
+        {
+            OnClickEvent(null);
+        }
+
+        public virtual void OnPointerDown(PointerEventData eventData)
+        {
+            OnClickEvent(transform.root);
+        }
     }
 
-    public virtual void OnPointerDown(PointerEventData eventData)
-    {        
-        OnClickEvent(transform.root);
-    }    
 }

@@ -8,12 +8,14 @@ namespace TowerDefence
 {
     public class TowerBuyControl : MonoBehaviour
     {
-
         [SerializeField] private TowerAsset m_ta;
         [SerializeField] private Text m_text;
         [SerializeField] private Button m_button;
         [SerializeField] private Transform buildSite;
-        public Transform BuildSite { set { buildSite = value; } }
+        public void SetBuildSite(Transform value)
+        {
+            buildSite = value; 
+        }
 
         private void Start()
         {
@@ -35,6 +37,7 @@ namespace TowerDefence
         public void Buy()
         {
             TDPlayer.Instance.TryBuild(m_ta, buildSite);
+            BuildSite.HideControls();
         }
 
     }
