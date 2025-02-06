@@ -1328,7 +1328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_NumLives: 1
+  m_NumLives: 2
   m_Ship: {fileID: 0}
   m_PlayerShipPrefab: {fileID: 0}
   m_gold: 10
