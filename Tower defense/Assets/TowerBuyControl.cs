@@ -40,6 +40,11 @@ namespace TowerDefence
             BuildSite.HideControls();
         }
 
+        private void OnDestroy()
+        {
+            TDPlayer.GoldUpdateUnsubscribe(GoldStatusChek);
+        }
+
     }
 }
 

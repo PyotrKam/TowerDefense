@@ -51,6 +51,16 @@ namespace TowerDefence
             tower.GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.sprite;
             Destroy(buildSite.gameObject);
         }
+
+        public static void GoldUpdateUnsubscribe(Action<int> act)
+        {
+            OnGoldUpdate -= act;
+        }
+        public static void LiveUpdateUnSubscribe(Action<int> act)
+        {
+            OnGoldUpdate -= act;
+        }
+
     }
 }
 

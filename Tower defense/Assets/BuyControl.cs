@@ -17,7 +17,7 @@ namespace TowerDefence
         }
         private void MoveToBuildSite(Transform buildSite)
         {
-            if (buildSite)
+            if (buildSite != null && Camera.main != null && t != null)
             {
                 var position = Camera.main.WorldToScreenPoint(buildSite.position);
                 t.anchoredPosition = position;
@@ -32,7 +32,11 @@ namespace TowerDefence
             {
                 tbc.SetBuildSite(buildSite);
             }
+        }
 
+        private void OnDestroy()
+        {            
+            BuildSite.OnClickEvent -= MoveToBuildSite;
         }
     }
 }
