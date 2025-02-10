@@ -210,6 +210,7 @@ GameObject:
   - component: {fileID: 99143536}
   - component: {fileID: 99143537}
   - component: {fileID: 99143538}
+  - component: {fileID: 99143539}
   m_Layer: 0
   m_Name: EnemyCamp
   m_TagString: Untagged
@@ -277,6 +278,26 @@ MonoBehaviour:
   m_path: {fileID: 353224706}
   m_EnemyAssets:
   - {fileID: 11400000, guid: 58c912312781cbd4ab9aa3de9744e97a, type: 2}
+--- !u!114 &99143539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99143535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 120bcb9efdb085f468a1e973155d6d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Area: {fileID: 789955025}
+  m_SpawnMode: 1
+  m_NumSpawns: 1
+  m_RespawnTime: 20
+  m_EnemyPrefab: {fileID: -2069825927851586324, guid: 7fa2367b9786a7747b22a41b86a3e3be, type: 3}
+  m_path: {fileID: 353224706}
+  m_EnemyAssets:
+  - {fileID: 11400000, guid: b9f1d539067478840974e505ccfc1e05, type: 2}
 --- !u!1 &110870312
 GameObject:
   m_ObjectHideFlags: 0
