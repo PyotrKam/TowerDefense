@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+
 namespace SpaceShooter
 {
     /// <summary>
@@ -37,7 +38,7 @@ namespace SpaceShooter
         /// <summary>
         /// Событие которое будет вызвано когда уровень будет выполнен. Вызывается один раз.
         /// </summary>
-        [SerializeField] private UnityEvent m_EventLevelCompleted;
+        [SerializeField] protected UnityEvent m_EventLevelCompleted;
 
         /// <summary>
         /// Массив условий для успешного прохождения уровня.
@@ -51,7 +52,7 @@ namespace SpaceShooter
 
         #region Unity events
 
-        private void Start()
+        protected void Start()
         {
             m_Conditions = GetComponentsInChildren<ILevelCondition>();
         }

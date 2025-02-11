@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace SpaceShooter
@@ -13,6 +11,7 @@ namespace SpaceShooter
 
         [SerializeField] private int m_NumLives;
         public int NumLives { get { return m_NumLives; } }
+        public event Action OnPlayerDead;
 
         [SerializeField] private SpaceShip m_Ship;
         public SpaceShip ActiveShip => m_Ship;
@@ -45,8 +44,8 @@ namespace SpaceShooter
             m_NumLives -= m_damage;
             if (m_NumLives <= 0)
             {
-                //LevelSequenceController.Instance.FinishCurrentLevel(false);
-                LevelSequenceController.Instance.RestartLevel();
+                m_NumLives = 0;
+                OnPlayerDead?.Invoke();
             }
         }
 

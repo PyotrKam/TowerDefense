@@ -10,7 +10,7 @@ namespace TowerDefence
         public UpdateSource source = UpdateSource.Gold;
         private Text m_text;
 
-        private bool isActive = true;
+        //private bool isActive = true;
 
         void Start()
         {
@@ -41,7 +41,7 @@ namespace TowerDefence
 
         private void OnDestroy()
         {
-            isActive = false;
+            //isActive = false;
             TDPlayer.GoldUpdateUnsubscribe(UpdateText);
             
         }
