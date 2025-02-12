@@ -1,0 +1,16 @@
+using UnityEngine;
+using SpaceShooter;
+
+namespace TowerDefence
+{
+    public class MapLevel : MonoBehaviour
+    {
+        [SerializeField] private Episode episode;
+
+        public void LoadLevel()
+        {
+            LevelSequenceController.Instance.StartEpisode(episode);
+        }
+    }
+}
+
