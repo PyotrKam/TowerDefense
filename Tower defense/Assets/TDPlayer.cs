@@ -19,7 +19,7 @@ namespace TowerDefence
             OnGoldUpdate += act;
             act(Instance.m_gold);
         }
-        private static event Action<int> OnLifeUpdate;
+        public static event Action<int> OnLifeUpdate;
 
         public static void LiveUpdateSubscribe(Action<int> act)
         {
@@ -58,7 +58,7 @@ namespace TowerDefence
         }
         public static void LiveUpdateUnSubscribe(Action<int> act)
         {
-            OnGoldUpdate -= act;
+            OnLifeUpdate -= act;
         }
 
     }

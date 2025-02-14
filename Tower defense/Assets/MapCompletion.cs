@@ -2,27 +2,29 @@ using UnityEngine;
 using SpaceShooter;
 using System;
 
-
 namespace TowerDefence
 {
     public class MapCompletion : MonoSingleton<MapCompletion>
     {
-        public const string filename = "completion.dat";
-                
+        public const string filename = "completion.dat";                
 
         [Serializable] 
         private class EpisodeScore
         {
             public Episode episode;
             public int score;
-        }
-
-        
+        }        
 
         public static void SaveEpisodeResult(int levelScore)
         {
-
-            Instance.SaveResult(LevelSequenceController.Instance.CurrentEpisode, levelScore);
+            if (Instance)
+            {
+                Instance.SaveResult(LevelSequenceController.Instance.CurrentEpisode, levelScore);
+            }
+            else
+            {
+                Debug.Log($"Episode complete with score {levelScore}");
+            }
         }
 
         private void SaveResult(Episode currentEpisode, int levelScore)
@@ -36,7 +38,6 @@ namespace TowerDefence
                         item.score = levelScore;
                         Saver<EpisodeScore[]>.Save(filename, completionData);
                     }
-
                 }
             }
         }
@@ -60,9 +61,7 @@ namespace TowerDefence
             episode = null;
             score = 0;
             return false;
-        }
-
-        
+        }        
     }
 }
 

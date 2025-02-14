@@ -7,8 +7,9 @@ namespace TowerDefence
     public class MapLevel : MonoBehaviour
     {
         private Episode m_episode;
-        [SerializeField] private Text text;
-
+        [SerializeField] private RectTransform resultPanel;
+        [SerializeField] private Image[] resultImage;
+        
         public void LoadLevel()
         {
             LevelSequenceController.Instance.StartEpisode(m_episode);
@@ -17,7 +18,13 @@ namespace TowerDefence
         public void SetLevelData(Episode episode, int score)
         {
             m_episode = episode;
-            text.text = $"{score}/3";
+            resultPanel.gameObject.SetActive(score > 0);
+
+            for (int i = 0; i < score; i++)
+            {
+                resultImage[i].color = Color.white;
+            }
+                        
         }
     }
 }
