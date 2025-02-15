@@ -49,12 +49,27 @@ namespace TowerDefence
 
         public IEnumerable<(EnemyAsset asset, int count, int pathIndex)> EnumerateSquads()
         {
-            yield return (groups[0].squads[0].asset, groups[0].squads[0].count, 0);
+            for (int i = 0; i < groups.Length; i++)
+            {
+                foreach (var squad in groups[i].squads)
+                {
+                    yield return (squad.asset, squad.count, i);
+                }
+                
+            }
+            
         }
 
-        internal EnemyWave PrepareNext(Action spawnEnemies)
+        [SerializeField] private EnemyWave next;
+        public EnemyWave PrepareNext(Action spawnEnemies)
         {
-            return null;
+            OnWaveReady -= spawnEnemies;
+            if (next)
+            {
+                next.Prepare(spawnEnemies);
+            }
+            
+            return next;
         }
     }
 }
