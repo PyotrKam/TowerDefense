@@ -4,6 +4,7 @@ using UnityEngine;
 using SpaceShooter;
 using UnityEditor;
 using UnityEngine.UIElements;
+using System;
 
 namespace TowerDefence
 {
@@ -12,6 +13,12 @@ namespace TowerDefence
     {
         [SerializeField] private int m_damage = 1;
         [SerializeField] private int m_gold = 1;
+
+        public event Action OnEnd;
+        private void OnDestroy()
+        {
+            OnEnd?.Invoke();
+        }
 
         public void Use(EnemyAsset asset)
         {

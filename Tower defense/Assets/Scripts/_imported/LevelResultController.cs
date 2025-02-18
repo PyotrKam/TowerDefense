@@ -25,6 +25,8 @@ namespace SpaceShooter
         /// <param name="result"></param>
         public void Show(bool result)
         {
+
+            print("Enter result");
             /*
             if (result)
             {

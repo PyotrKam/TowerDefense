@@ -468,6 +468,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41c87d402246c742a6cad72be4c4de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startArea: {fileID: 0}
   points:
   - {fileID: 1085025580}
   - {fileID: 1695462471}
@@ -876,6 +877,7 @@ GameObject:
   - component: {fileID: 655934047}
   - component: {fileID: 655934048}
   - component: {fileID: 655934049}
+  - component: {fileID: 655934050}
   m_Layer: 0
   m_Name: PlayerCamp
   m_TagString: Untagged
@@ -935,6 +937,19 @@ MonoBehaviour:
   m_EventLevelCompleted:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &655934050
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 655934045}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc56d6f673f02e44aea0dad80e35f8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLimit: 4
 --- !u!1 &673023244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,6 +1352,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41c87d402246c742a6cad72be4c4de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startArea: {fileID: 0}
   points:
   - {fileID: 352527974}
 --- !u!1 &952984275
@@ -1613,6 +1629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41c87d402246c742a6cad72be4c4de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startArea: {fileID: 0}
   points:
   - {fileID: 352527974}
 --- !u!1 &1205995297
@@ -2206,6 +2223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e41c87d402246c742a6cad72be4c4de6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startArea: {fileID: 0}
   points:
   - {fileID: 673023246}
   - {fileID: 1205995299}
