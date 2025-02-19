@@ -6,14 +6,14 @@ namespace TowerDefence
 {
     public class MapCompletion : MonoSingleton<MapCompletion>
     {
-        public const string filename = "completion.dat";                
+        public const string filename = "completion.dat";
 
-        [Serializable] 
+        [Serializable]
         private class EpisodeScore
         {
             public Episode episode;
             public int score;
-        }        
+        }
 
         public static void SaveEpisodeResult(int levelScore)
         {
@@ -43,11 +43,17 @@ namespace TowerDefence
         }
 
         [SerializeField] private EpisodeScore[] completionData;
+        [SerializeField] private int totalScore;
+        public int TotalScore {get { return totalScore; } }
 
         private new void Awake()
         {
             base.Awake();
             Saver<EpisodeScore[]>.TryLoad(filename, ref completionData);
+            foreach (var episodeScore in completionData)
+            {
+                totalScore += episodeScore.score;
+            }
         }
 
         public bool TryIndex(int id, out Episode episode, out int score)

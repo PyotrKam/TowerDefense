@@ -6,10 +6,13 @@ namespace TowerDefence
 {
     public class MapLevel : MonoBehaviour
     {
+        
         private Episode m_episode;
         [SerializeField] private RectTransform resultPanel;
         [SerializeField] private Image[] resultImage;
-        
+
+        public bool isComplete { get {return gameObject.activeSelf && resultPanel.gameObject.activeSelf; } }
+
         public void LoadLevel()
         {
             LevelSequenceController.Instance.StartEpisode(m_episode);

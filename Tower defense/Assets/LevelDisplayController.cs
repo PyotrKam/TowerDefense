@@ -5,6 +5,8 @@ namespace TowerDefence
     public class LevelDisplayController : MonoBehaviour
     {
         [SerializeField] private MapLevel[] levels;
+        [SerializeField] private BranchLevel[] branchLevels;
+
         void Start()
         {
             var drawLevel = 0;
@@ -21,6 +23,12 @@ namespace TowerDefence
             {
                 levels[i].gameObject.SetActive(false);
             }
+
+            for (int i = 0; i < branchLevels.Length; i++)
+            {
+                
+                branchLevels[i].TryActivate();
+            }            
         }
     }
 }
