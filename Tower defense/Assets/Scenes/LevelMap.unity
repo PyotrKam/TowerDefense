@@ -134,6 +134,10 @@ PrefabInstance:
       propertyPath: episode
       value: 
       objectReference: {fileID: 11400000, guid: c1bf676b3ebf87e48ac61a0704acadc3, type: 2}
+    - target: {fileID: 2748269659700874765, guid: b77b602222d36d94b8393b0dab96cc8d, type: 3}
+      propertyPath: m_episode
+      value: 
+      objectReference: {fileID: 11400000, guid: c1bf676b3ebf87e48ac61a0704acadc3, type: 2}
     - target: {fileID: 6622878959360391863, guid: b77b602222d36d94b8393b0dab96cc8d, type: 3}
       propertyPath: m_Name
       value: Level2
@@ -351,7 +355,6 @@ MonoBehaviour:
     score: 0
   - episode: {fileID: 11400000, guid: bf3ee6a73402a1d41b784ebe9086839c, type: 2}
     score: 0
-  totalScore: 0
 --- !u!1 &1529499279
 GameObject:
   m_ObjectHideFlags: 0
@@ -432,6 +435,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: 'Level2_2 '
       objectReference: {fileID: 0}
+    - target: {fileID: 2404257120471787096, guid: 062ba8392187d164f8529137510c130b, type: 3}
+      propertyPath: m_episode
+      value: 
+      objectReference: {fileID: 11400000, guid: bf3ee6a73402a1d41b784ebe9086839c, type: 2}
     - target: {fileID: 2701313478539662229, guid: 062ba8392187d164f8529137510c130b, type: 3}
       propertyPath: pointText
       value: 
@@ -689,6 +696,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level1_2
       objectReference: {fileID: 0}
+    - target: {fileID: 2404257120471787096, guid: 062ba8392187d164f8529137510c130b, type: 3}
+      propertyPath: m_episode
+      value: 
+      objectReference: {fileID: 11400000, guid: fb196fc3139844644b0cc45f952e630e, type: 2}
     - target: {fileID: 2701313478539662229, guid: 062ba8392187d164f8529137510c130b, type: 3}
       propertyPath: rootLevel
       value: 
@@ -746,6 +757,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1450764616}
     m_Modifications:
+    - target: {fileID: 2748269659700874765, guid: b77b602222d36d94b8393b0dab96cc8d, type: 3}
+      propertyPath: m_episode
+      value: 
+      objectReference: {fileID: 11400000, guid: 7fcb8dbfe28899f40aa6578f363b228f, type: 2}
     - target: {fileID: 3343873465722797008, guid: b77b602222d36d94b8393b0dab96cc8d, type: 3}
       propertyPath: m_Camera
       value: 

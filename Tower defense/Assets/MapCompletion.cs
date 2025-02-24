@@ -26,7 +26,7 @@ namespace TowerDefence
                 Debug.Log($"Episode complete with score {levelScore}");
             }
         }
-
+                
         private void SaveResult(Episode currentEpisode, int levelScore)
         {
             foreach (var item in completionData)
@@ -43,7 +43,7 @@ namespace TowerDefence
         }
 
         [SerializeField] private EpisodeScore[] completionData;
-        [SerializeField] private int totalScore;
+        private int totalScore;
         public int TotalScore {get { return totalScore; } }
 
         private new void Awake()
@@ -54,20 +54,21 @@ namespace TowerDefence
             {
                 totalScore += episodeScore.score;
             }
+        }        
+
+        public int GetEpisodeScore(Episode m_episode)
+        {
+            foreach (var data in completionData)
+            {
+                if (data.episode == m_episode)
+                {
+                    return data.score;
+                }                
+            }
+
+            return 0;
         }
 
-        public bool TryIndex(int id, out Episode episode, out int score)
-        {
-            if (id >= 0 && id < completionData.Length)
-            {
-                episode = completionData[id].episode;
-                score = completionData[id].score;
-                return true;
-            }
-            episode = null;
-            score = 0;
-            return false;
-        }        
     }
 }
 

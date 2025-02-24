@@ -21,12 +21,14 @@ namespace TowerDefence
             gameObject.SetActive(rootLevel.isComplete);
             if (needPoints > MapCompletion.Instance.TotalScore)
             {
-                pointText.text = needPoints.ToString();
+                pointText.text = needPoints.ToString();                
             }
             else
             {
                 pointText.transform.parent.gameObject.SetActive(false);
+                GetComponent<MapLevel>().Initialise();
             }
+            
         }
     }
 }

@@ -11,9 +11,9 @@ namespace TowerDefence
         {
             var drawLevel = 0;
             var score = 1;
-            while (score != 0 && drawLevel < levels.Length && MapCompletion.Instance.TryIndex(drawLevel, out var episode, out score))
+            while (score != 0 && drawLevel < levels.Length)
             {
-                levels[drawLevel].SetLevelData(episode, score);
+                levels[drawLevel].Initialise();
                 drawLevel += 1;
                 // if (score == 0) break;  Module 23.4 another solution (36:40)
 
