@@ -12,15 +12,36 @@ namespace TowerDefence
 
         public void Initialize()
         {
+              
             upgradeIcon.sprite = asset.sprite;
             var savedLevel = Upgrades.GetUpgradeLevel(asset);
-            level.text = $"{savedLevel + 1}";
-            cost.text = asset.costByLevel[savedLevel].ToString();
+            
+            if (savedLevel >= asset.costByLevel.Length)
+            {
+                level.text += "(Max)";
+                buyBotton.interactable = false;
+                buyBotton.transform.Find("Image (1)").gameObject.SetActive(false);
+                buyBotton.transform.Find("Text").gameObject.SetActive(false);
+
+                cost.text = "X";
+            }
+            else
+            {
+                level.text = $"{savedLevel + 1}";
+                cost.text = asset.costByLevel[savedLevel].ToString();
+            }
+            
+        }
+
+        internal void CheckCost(int money)
+        {
+            throw new System.NotImplementedException();
         }
 
         public void Buy()
         {
             Upgrades.BuyUpgrade(asset);
+            Initialize();
         }
     }
 }

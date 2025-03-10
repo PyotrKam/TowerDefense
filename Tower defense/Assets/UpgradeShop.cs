@@ -14,11 +14,22 @@ namespace TowerDefence
 
         void Start()
         {
-            money = MapCompletion.Instance.TotalScore;
-            moneyText.text = money.ToString();
+            UpdateMoney();
             foreach (var slot in sales)
             {
                 slot.Initialize();
+                slot.transform.Find("Button").GetComponent<Button>().onClick.AddListener(UpdateMoney);
+            }
+        }
+
+        public void UpdateMoney()
+        {            
+            money = MapCompletion.Instance.TotalScore;
+            money -= Upgrades.GetTotalCost();
+            moneyText.text = money.ToString();
+            foreach (var slot in sales)
+            {
+                slot.CheckCost(money);
             }
         }
         
