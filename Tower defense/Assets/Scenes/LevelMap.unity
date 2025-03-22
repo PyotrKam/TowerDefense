@@ -599,6 +599,8 @@ MonoBehaviour:
   save:
   - asset: {fileID: 11400000, guid: 523aa771e6ae6b24c826326c91826877, type: 2}
     level: 0
+  - asset: {fileID: 11400000, guid: 68d9f2b4c53f5c043890ba6224acc201, type: 2}
+    level: 0
 --- !u!1 &1529499279
 GameObject:
   m_ObjectHideFlags: 0
