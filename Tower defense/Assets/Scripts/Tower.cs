@@ -7,12 +7,25 @@ namespace TowerDefence
     public class Tower : MonoBehaviour
     {
         [SerializeField] private float m_Radius = 5.0f;
+        [SerializeField] private UpgradeAsset radiusUpgrade;
+
         private Turret[] turrets;
         private Destructible target = null;
 
         private void Start()
         {
             turrets = GetComponentsInChildren<Turret>();
+            ApplyRadiusUpgrade();
+
+            Debug.Log("Tower Radius: " + m_Radius);
+        }
+
+        //Trying
+        private void ApplyRadiusUpgrade()
+        {
+            int upgradeLevel = Upgrades.GetUpgradeLevel(radiusUpgrade);
+            m_Radius = 5.0f + upgradeLevel * 1.0f; 
+            Debug.Log("New Radius: " + m_Radius);
         }
 
         private void Update()
@@ -47,11 +60,13 @@ namespace TowerDefence
             }            
         }
 
-        private void OnDrawGizmosSelected()
+        private void OnDrawGizmos()
         {
             Gizmos.color = Color.cyan;
 
             Gizmos.DrawWireSphere(transform.position, m_Radius);
+
+
         }
     }
 }

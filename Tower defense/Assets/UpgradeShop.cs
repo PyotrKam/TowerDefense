@@ -14,12 +14,14 @@ namespace TowerDefence
 
         void Start()
         {
-            UpdateMoney();
+            
             foreach (var slot in sales)
             {
                 slot.Initialize();
                 slot.transform.Find("Button").GetComponent<Button>().onClick.AddListener(UpdateMoney);
             }
+
+            UpdateMoney(); 
         }
 
         public void UpdateMoney()

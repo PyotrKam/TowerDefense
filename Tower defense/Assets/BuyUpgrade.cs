@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,8 +8,12 @@ namespace TowerDefence
     {
         [SerializeField] private UpgradeAsset asset;
         [SerializeField] private Image upgradeIcon;
-        [SerializeField] private Text level, cost;
+        [SerializeField] private Text level, costText;
         [SerializeField] private Button buyBotton;
+        private int costNumber = 0;
+
+        // Trying
+        public static event Action<UpgradeAsset> OnUpgradePurchased;
 
         public void Initialize()
         {
@@ -16,32 +21,37 @@ namespace TowerDefence
             upgradeIcon.sprite = asset.sprite;
             var savedLevel = Upgrades.GetUpgradeLevel(asset);
             
+
             if (savedLevel >= asset.costByLevel.Length)
             {
-                level.text += "(Max)";
+                level.text = $"Lvl: {savedLevel} (Max)";
                 buyBotton.interactable = false;
                 buyBotton.transform.Find("Image (1)").gameObject.SetActive(false);
                 buyBotton.transform.Find("Text").gameObject.SetActive(false);
-
-                cost.text = "X";
+                costText.text = "X";
+                costNumber = int.MaxValue;
             }
             else
             {
                 level.text = $"{savedLevel + 1}";
-                cost.text = asset.costByLevel[savedLevel].ToString();
+                costNumber = asset.costByLevel[savedLevel];
+                costText.text = costNumber.ToString();
             }
             
         }
 
         internal void CheckCost(int money)
         {
-            throw new System.NotImplementedException();
+            buyBotton.interactable = money >= costNumber;
         }
 
         public void Buy()
         {
             Upgrades.BuyUpgrade(asset);
             Initialize();
+
+            // Trying
+            OnUpgradePurchased?.Invoke(asset);
         }
     }
 }

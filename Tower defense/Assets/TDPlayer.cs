@@ -52,6 +52,15 @@ namespace TowerDefence
             Destroy(buildSite.gameObject);
         }
 
+        [SerializeField] private UpgradeAsset healtUpgrade;
+
+        private new void Awake()
+        {
+            base.Awake();
+            var level = Upgrades.GetUpgradeLevel(healtUpgrade);
+            TakeDamage(-level * 5);
+        }
+
         public static void GoldUpdateUnsubscribe(Action<int> act)
         {
             OnGoldUpdate -= act;

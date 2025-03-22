@@ -1040,6 +1040,7 @@ MonoBehaviour:
   m_PlayerShipPrefab: {fileID: 0}
   m_gold: 1000
   m_towerPrefab: {fileID: 4330943642748709882, guid: 73fdf7f5c9abfb247a79434b739cd7de, type: 3}
+  healtUpgrade: {fileID: 11400000, guid: 523aa771e6ae6b24c826326c91826877, type: 2}
 --- !u!114 &655934049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2494,6 +2495,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1933287970}
   - component: {fileID: 1933287969}
+  - component: {fileID: 1933287971}
   m_Layer: 0
   m_Name: SingleLevelTestObject
   m_TagString: Untagged
@@ -2529,6 +2531,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1933287971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1933287968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bab722aec2da5144fbb4f4d22f5655e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DoNotDestroyOnLoad: 0
+  save:
+  - asset: {fileID: 11400000, guid: 523aa771e6ae6b24c826326c91826877, type: 2}
+    level: 1
 --- !u!1 &2070076254
 GameObject:
   m_ObjectHideFlags: 0
