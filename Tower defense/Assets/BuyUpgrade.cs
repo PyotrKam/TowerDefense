@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.UI;
+using SpaceShooter;
 
 namespace TowerDefence
 {
@@ -47,11 +48,14 @@ namespace TowerDefence
 
         public void Buy()
         {
+            Debug.Log($"Trying to buy {asset.name}");
+
             Upgrades.BuyUpgrade(asset);
             Initialize();
-
-            // Trying
+           
             OnUpgradePurchased?.Invoke(asset);
+
+
         }
     }
 }

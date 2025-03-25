@@ -6,6 +6,7 @@ namespace TowerDefence
 {
     public class Tower : MonoBehaviour
     {
+        //[SerializeField] private float _defaultRadius = 3.0f;
         [SerializeField] private float m_Radius = 5.0f;
         [SerializeField] private UpgradeAsset radiusUpgrade;
 

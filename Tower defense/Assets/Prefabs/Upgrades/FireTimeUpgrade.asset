@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa4fdb58caa358340b41b4b86c1d49e9, type: 3}
-  m_Name: HealthUpgrade
+  m_Name: FireTimeUpgrade
   m_EditorClassIdentifier: 
-  sprite: {fileID: 21300000, guid: ae93735604fc8d04e8159ac66b724f1f, type: 3}
-  costByLevel: 030000000400000005000000
+  sprite: {fileID: 21300000, guid: ef25b92a8e4b2644b8420de820e6c11f, type: 3}
+  costByLevel: 010000000200000003000000

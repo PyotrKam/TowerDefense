@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TowerDefence;
 
 namespace SpaceShooter
 {
@@ -20,11 +21,14 @@ namespace SpaceShooter
         /// Текущие патроны в турели.
         /// </summary>
         [SerializeField] private TurretProperties m_TurretProperties;
+        [SerializeField] private UpgradeAsset fireRateUpgrade; // Trying
 
         /// <summary>
         /// Таймер повторного выстрела.
         /// </summary>
         private float m_RefireTimer;
+        private float m_BaseFireRate; 
+        private float m_CurrentFireRate; // Trying
 
         /// <summary>
         /// Стрелять можем? 
@@ -41,6 +45,9 @@ namespace SpaceShooter
         private void Start()
         {
             m_Ship = transform.root.GetComponent<SpaceShip>();
+            m_BaseFireRate = m_TurretProperties.RateOfFire;
+            m_CurrentFireRate = m_BaseFireRate;
+            ApplyFireRateUpgrade();
         }
 
         private void Update()
@@ -56,6 +63,20 @@ namespace SpaceShooter
             }
         }
 
+        // Trying----------------------------------------
+        public void ApplyFireRateUpgrade()
+        {
+            if (fireRateUpgrade == null || m_TurretProperties == null) return;
+
+            int upgradeLevel = Upgrades.GetUpgradeLevel(fireRateUpgrade);
+            float reduction = upgradeLevel * 0.5f; 
+
+            m_CurrentFireRate = Mathf.Max(m_TurretProperties.RateOfFire * (1f - reduction), 0.05f);
+
+            Debug.Log($"Turret FireRate upgraded: {m_CurrentFireRate} (Level {upgradeLevel})");
+        }
+
+
         #endregion
 
         #region Public API
@@ -65,6 +86,8 @@ namespace SpaceShooter
         /// </summary>
         public void Fire()
         {
+            
+
             if (m_RefireTimer > 0)
                 return;
 
@@ -80,6 +103,8 @@ namespace SpaceShooter
                 // кушаем патроны
                 if (!m_Ship.DrawAmmo(m_TurretProperties.AmmoUsage))
                     return;
+
+                m_RefireTimer = m_CurrentFireRate;
             }
             
             
@@ -91,7 +116,7 @@ namespace SpaceShooter
             // метод выставления данных прожектайлу о том кто стрелял для избавления от попаданий в самого себя
             projectile.SetParentShooter(m_Ship);
 
-            m_RefireTimer = m_TurretProperties.RateOfFire;
+            m_RefireTimer = m_CurrentFireRate;
 
             {
                 // SFX на домашку
@@ -108,7 +133,12 @@ namespace SpaceShooter
                 return;
 
             m_TurretProperties = props;
+            m_BaseFireRate = props.RateOfFire; 
+            m_CurrentFireRate = m_BaseFireRate;
+
             m_RefireTimer = 0;
+
+            ApplyFireRateUpgrade();
         }
 
 

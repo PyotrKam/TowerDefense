@@ -27,6 +27,10 @@ namespace TowerDefence
         public void UpdateMoney()
         {            
             money = MapCompletion.Instance.TotalScore;
+            if (money <= 10)
+            {
+                money = 50;
+            }
             money -= Upgrades.GetTotalCost();
             moneyText.text = money.ToString();
             foreach (var slot in sales)
