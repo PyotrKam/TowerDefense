@@ -75,6 +75,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Radius: 3
+  radiusUpgrade: {fileID: 11400000, guid: 68d9f2b4c53f5c043890ba6224acc201, type: 2}
 --- !u!1 &4382907363988056726
 GameObject:
   m_ObjectHideFlags: 0
