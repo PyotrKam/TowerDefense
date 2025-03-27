@@ -24,25 +24,16 @@ using UnityEngine;
             }
             public static void BuyUpgrade(UpgradeAsset asset)
             {
-            if (asset == null)
-            {
-                Debug.LogError("Asset is null!");
-                
-            }
-            if (asset != null)
-            {
-                Debug.LogWarningFormat($"Asset name is {asset.name} ");
-
-            }
+            
 
             foreach (var upgrade in Instance.save)
                 {
-                 Debug.Log($"Trying to buy {asset.name} from BuyUpgrade");
+                 //Debug.Log($"Trying to buy {asset.name} from BuyUpgrade");
 
                     if (upgrade.asset == asset)
                     {
 
-                        Debug.Log($" Her it is {asset.name} ");
+                        //Debug.Log($" Her it is {asset.name} ");
                         upgrade.level += 1;
                         Saver<UpgradeSave[]>.Save(filename, Instance.save);                           
                     }
