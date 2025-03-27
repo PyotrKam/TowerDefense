@@ -603,6 +603,8 @@ MonoBehaviour:
     level: 0
   - asset: {fileID: 11400000, guid: 68d9f2b4c53f5c043890ba6224acc201, type: 2}
     level: 0
+  - asset: {fileID: 11400000, guid: 56c23a25ad094c14ea84fc410b2ae352, type: 2}
+    level: 0
 --- !u!1 &1529499279
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,38 +1258,6 @@ PrefabInstance:
     - target: {fileID: 4461970212692922506, guid: 793b945b34859d844a48420bce306788, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669997566048624205, guid: 793b945b34859d844a48420bce306788, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669997566048624205, guid: 793b945b34859d844a48420bce306788, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669997566048624205, guid: 793b945b34859d844a48420bce306788, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 1903255052244864772, guid: 793b945b34859d844a48420bce306788, type: 3}
-    - target: {fileID: 5669997566048624205, guid: 793b945b34859d844a48420bce306788, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669997566048624205, guid: 793b945b34859d844a48420bce306788, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Buy
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669997566048624205, guid: 793b945b34859d844a48420bce306788, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: TowerDefence.BuyUpgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669997566048624205, guid: 793b945b34859d844a48420bce306788, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: TowerDefence.BuyUpgrade, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 5669997566048624205, guid: 793b945b34859d844a48420bce306788, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -53,7 +53,7 @@ namespace TowerDefence
             Upgrades.BuyUpgrade(asset);
             Initialize();
            
-            OnUpgradePurchased?.Invoke(asset);
+            //OnUpgradePurchased?.Invoke(asset);
 
 
         }
