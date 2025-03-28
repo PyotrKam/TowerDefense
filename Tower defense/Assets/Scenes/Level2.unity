@@ -920,6 +920,7 @@ MonoBehaviour:
   m_PlayerShipPrefab: {fileID: 0}
   m_gold: 10
   m_towerPrefab: {fileID: 1371707439}
+  healtUpgrade: {fileID: 11400000, guid: 523aa771e6ae6b24c826326c91826877, type: 2}
 --- !u!114 &655934049
 MonoBehaviour:
   m_ObjectHideFlags: 0

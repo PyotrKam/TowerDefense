@@ -13,7 +13,7 @@ namespace TowerDefence
             var score = 1;
             while (score != 0 && drawLevel < levels.Length)
             {
-                levels[drawLevel].Initialise();
+                score = levels[drawLevel].Initialise();
                 drawLevel += 1;
                 // if (score == 0) break;  Module 23.4 another solution (36:40)
 

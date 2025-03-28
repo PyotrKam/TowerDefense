@@ -14,7 +14,7 @@ namespace TowerDefence
         private int costNumber = 0;
 
         // Trying
-        public static event Action<UpgradeAsset> OnUpgradePurchased;
+        //public static event Action<UpgradeAsset> OnUpgradePurchased;
 
         public void Initialize()
         {
@@ -48,7 +48,7 @@ namespace TowerDefence
 
         public void Buy()
         {
-            Debug.Log($"Trying to buy {asset.name}");
+            //Debug.Log($"Trying to buy {asset.name}");
 
             Upgrades.BuyUpgrade(asset);
             Initialize();
