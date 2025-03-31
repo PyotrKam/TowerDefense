@@ -93,9 +93,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8565080194006786830}
-  - component: {fileID: 1957024541052049159}
+  - component: {fileID: 5799866874737329412}
   m_Layer: 0
-  m_Name: Projectile
+  m_Name: ArcherProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ Transform:
   - {fileID: 6726965876538558033}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1957024541052049159
+--- !u!114 &5799866874737329412
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,11 +126,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4862649359436952498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e30da3725daac2849b6d121ffc1a1671, type: 3}
+  m_Script: {fileID: 11500000, guid: fb28e9ad1fd69c34abe2d0f09ea508e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
-  m_Velocity: 10
-  m_Lifetime: 1
+  m_Velocity: 5
+  m_Lifetime: 2
   m_Damage: 3
   m_ImpactEffectPrefab: {fileID: 0}

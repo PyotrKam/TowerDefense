@@ -47,8 +47,8 @@ namespace TowerDefence
         public void TryBuild(TowerAsset towerAsset, Transform buildSite)
         {
             ChangeGold(-towerAsset.goldCost);
-            var tower = Instantiate(m_towerPrefab, buildSite.position, Quaternion.identity);            
-            tower.GetComponentInChildren<SpriteRenderer>().sprite = towerAsset.sprite;
+            var tower = Instantiate(m_towerPrefab, buildSite.position, Quaternion.identity);
+            tower.Use(towerAsset);            
             Destroy(buildSite.gameObject);
         }
 

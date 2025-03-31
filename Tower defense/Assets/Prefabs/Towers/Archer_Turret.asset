@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a564f457bf30ba741aca49299378a91d, type: 3}
-  m_Name: Stone_Turret Properties 1
+  m_Name: Archer_Turret
   m_EditorClassIdentifier: 
   m_Mode: 0
-  m_ProjectilePrefab: {fileID: 1957024541052049159, guid: 7f3c29b5c5d3bd845b8296bd67b3204d, type: 3}
-  m_RateOfFire: 5
+  m_ProjectilePrefab: {fileID: 5799866874737329412, guid: 324bd06ee98a61a4fada54936f649271, type: 3}
+  m_RateOfFire: 0.3
   m_EnergyUsage: 0
   m_AmmoUsage: 0
   m_LaunchSFX: {fileID: 0}

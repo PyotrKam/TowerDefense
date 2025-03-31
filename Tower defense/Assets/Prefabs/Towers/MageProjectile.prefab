@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8565080194006786830}
@@ -73,8 +73,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 84c5997d04e0a8f498c0dc55fb3ae16a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 0.07401202, g: 0.7093101, b: 0.7132075, a: 0.69803923}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,9 +93,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8565080194006786830}
-  - component: {fileID: 1957024541052049159}
+  - component: {fileID: 2850388636998395411}
   m_Layer: 0
-  m_Name: ProjectileStone
+  m_Name: MageProjectile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -117,7 +117,7 @@ Transform:
   - {fileID: 6726965876538558033}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1957024541052049159
+--- !u!114 &2850388636998395411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -126,11 +126,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4862649359436952498}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e30da3725daac2849b6d121ffc1a1671, type: 3}
+  m_Script: {fileID: 11500000, guid: fb28e9ad1fd69c34abe2d0f09ea508e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Nickname: 
-  m_Velocity: 5
-  m_Lifetime: 1
-  m_Damage: 30
+  m_Velocity: 10
+  m_Lifetime: 2
+  m_Damage: 9
   m_ImpactEffectPrefab: {fileID: 0}
+  m_DamageType: 1

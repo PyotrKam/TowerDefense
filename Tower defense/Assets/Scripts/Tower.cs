@@ -13,9 +13,19 @@ namespace TowerDefence
         private Turret[] turrets;
         private Destructible target = null;
 
+        public void Use(TowerAsset asset)
+        {
+            GetComponentInChildren<SpriteRenderer>().sprite = asset.sprite;
+            turrets = GetComponentsInChildren<Turret>();
+            foreach (var turret in turrets)
+            {
+                turret.AssignLoadout(asset.turretProperties);
+            }
+        }
+
         private void Start()
         {
-            turrets = GetComponentsInChildren<Turret>();
+            
             ApplyRadiusUpgrade();
 
             Debug.Log("Tower Radius: " + m_Radius);

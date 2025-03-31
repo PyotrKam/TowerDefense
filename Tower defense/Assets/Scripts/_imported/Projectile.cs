@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using TowerDefence;
+
 
 
 namespace SpaceShooter
@@ -24,7 +24,7 @@ namespace SpaceShooter
         /// <summary>
         /// Повреждения наносимые снарядом.
         /// </summary>
-        [SerializeField] private int m_Damage;
+        [SerializeField] protected int m_Damage;
 
         /// <summary>
         /// Эффект попадания от что то твердое. 
@@ -58,19 +58,8 @@ namespace SpaceShooter
             transform.position += new Vector3(step.x, step.y, 0);
         }
 
-        private void OnHit(RaycastHit2D hit)
-        {
-            var enemy = hit.collider.transform.root.GetComponent<Enemy>();
-
-            if (enemy != null)
-            {
-                enemy.TakeDamage(m_Damage);                
-            }
-        }
         
-
-        /*
-        private void OnHit(RaycastHit2D hit)
+        protected virtual void OnHit(RaycastHit2D hit)
         {
             var destructible = hit.collider.transform.root.GetComponent<Destructible>();
 
@@ -94,7 +83,7 @@ namespace SpaceShooter
             }
 
         }
-        */
+        
         private void OnProjectileLifeEnd(Collider2D collider, Vector2 pos)
         {
             if(m_ImpactEffectPrefab != null)

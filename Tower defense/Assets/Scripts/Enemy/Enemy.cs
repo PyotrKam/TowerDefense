@@ -12,9 +12,33 @@ namespace TowerDefence
     [RequireComponent(typeof(TDPatrolController))]
     public class Enemy : MonoBehaviour
     {
+        public enum ArmorType { Base=0, Magic=1}
+        private static Func<int, TDProjectile.DamageType, int, int>[] ArmorDamageFunctions =
+        {
+            (int power, TDProjectile.DamageType type, int armor) =>
+            {// ArmorType.Base
+                switch (type)
+                {
+                    case TDProjectile.DamageType.Magic : return power;
+                        default: return Mathf.Max(power - armor, 1);
+                }                
+            },
+            (int power, TDProjectile.DamageType type, int armor) =>
+            {// ArmorType.Magic
+                if (TDProjectile.DamageType.Base == type)
+                {
+                    armor = armor / 2;                         
+                }
+                return Mathf.Max(power - armor, 1);
+            }
+
+        };
+
         [SerializeField] private int m_damage = 1;
         [SerializeField] private int m_gold = 1;
         [SerializeField] private int m_armor = 1;
+        [SerializeField] private ArmorType m_ArmorType;
+
 
         private Destructible m_destructible;
 
@@ -45,6 +69,7 @@ namespace TowerDefence
             m_damage = asset.damage;
             m_armor = asset.armor;
             m_gold = asset.gold;
+            m_ArmorType = asset.armorType;
         }
 
         public void DamagePlayer()
@@ -57,9 +82,9 @@ namespace TowerDefence
             TDPlayer.Instance.ChangeGold(m_gold);
         }
 
-        public void TakeDamage(int damage)
+        public void TakeDamage(int damage, TDProjectile.DamageType damageType)
         {
-            m_destructible.ApplyDamage(Mathf.Max(1, damage - m_armor));
+            m_destructible.ApplyDamage(ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_armor));
         }
     }
 

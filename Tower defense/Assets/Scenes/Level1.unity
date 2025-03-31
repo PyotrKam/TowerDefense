@@ -302,7 +302,7 @@ MonoBehaviour:
   groups:
   - squads:
     - asset: {fileID: 11400000, guid: f2b8762633d5d0d47838eab052df94b1, type: 2}
-      count: 1
+      count: 5
   prepareTime: 2
   next: {fileID: 1024105214}
 --- !u!224 &97386873 stripped
