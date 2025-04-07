@@ -6,21 +6,21 @@ namespace TowerDefence
 {
     public class BuyControl : MonoBehaviour
     {
-        private RectTransform t;
+        private RectTransform m_RectTransform;
 
         private void Awake()
         {
-            t = GetComponent<RectTransform>();
+            m_RectTransform = GetComponent<RectTransform>();
             BuildSite.OnClickEvent += MoveToBuildSite;
             gameObject.SetActive(false);
 
         }
         private void MoveToBuildSite(Transform buildSite)
         {
-            if (buildSite != null && Camera.main != null && t != null)
+            if (buildSite != null && Camera.main != null && m_RectTransform != null)
             {
                 var position = Camera.main.WorldToScreenPoint(buildSite.position);
-                t.anchoredPosition = position;
+                m_RectTransform.anchoredPosition = position;
                 gameObject.SetActive(true);
             }
             else
