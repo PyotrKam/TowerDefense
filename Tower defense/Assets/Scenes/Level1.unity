@@ -2946,6 +2946,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: SingleLevelTestObject
       objectReference: {fileID: 0}
+    - target: {fileID: 6986205575137437793, guid: 3bd0334d22b057040b02c0fc6acb1d1d, type: 3}
+      propertyPath: save.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986205575137437793, guid: 3bd0334d22b057040b02c0fc6acb1d1d, type: 3}
+      propertyPath: save.Array.data[1].asset
+      value: 
+      objectReference: {fileID: 11400000, guid: d129642869f328942812c16f4313e415, type: 2}
+    - target: {fileID: 6986205575137437793, guid: 3bd0334d22b057040b02c0fc6acb1d1d, type: 3}
+      propertyPath: save.Array.data[1].level
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8527003234722030074, guid: 3bd0334d22b057040b02c0fc6acb1d1d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 7.9799995
