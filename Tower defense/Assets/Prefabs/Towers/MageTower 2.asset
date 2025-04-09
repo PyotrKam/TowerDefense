@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1feb627c5706b8a4b81be45969a6f31c, type: 3}
-  m_Name: MageTower
+  m_Name: MageTower 2
   m_EditorClassIdentifier: 
-  goldCost: 35
+  goldCost: 45
   sprite: {fileID: 21300000, guid: 298636722737c4b41816506cd4bc994f, type: 3}
   GUISprite: {fileID: 21300000, guid: 1ff55c4a74fcf9b429b49b787ead3395, type: 3}
   turretProperties: {fileID: 11400000, guid: f5121ca705abcd549965c3d75a7e0802, type: 2}
   requiredUpgrade: {fileID: 11400000, guid: d129642869f328942812c16f4313e415, type: 2}
-  requiredUpgradeLevel: 1
-  m_UpgradesTo:
-  - {fileID: 11400000, guid: f35f4e7f013b89048af47dca284b1400, type: 2}
+  requiredUpgradeLevel: 2
+  m_UpgradesTo: []

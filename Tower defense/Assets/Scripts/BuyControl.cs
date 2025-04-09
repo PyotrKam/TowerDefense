@@ -27,7 +27,7 @@ namespace TowerDefence
                 gameObject.SetActive(true);
                 m_ActiveControl = new List<TowerBuyControl>();
 
-                foreach(var asset in buildSite.BuildableTowers)
+                foreach(var asset in buildSite.buildableTowers)
                 {
                     
                     if (asset.IsAvailable())
