@@ -1217,6 +1217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ab9d0d54d8f1f408eceab03be57260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_BuildableTowers: []
 --- !u!1 &894650102
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,10 +1679,6 @@ PrefabInstance:
     - target: {fileID: 1682104405680678131, guid: be870f1deebcacb4dbd1350f5d983cb5, type: 3}
       propertyPath: m_Name
       value: buildSite (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1682104405680678131, guid: be870f1deebcacb4dbd1350f5d983cb5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3633789870021128172, guid: be870f1deebcacb4dbd1350f5d983cb5, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2759,6 +2756,30 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 4557507656651781569, guid: 866ca3883b4f795429cc0b4dccef0fbf, type: 3}
+      propertyPath: m_TowerBuyPrefab
+      value: 
+      objectReference: {fileID: 7784444752673953275, guid: 88996e5f3df964c429ce620cebd8740d, type: 3}
+    - target: {fileID: 4557507656651781569, guid: 866ca3883b4f795429cc0b4dccef0fbf, type: 3}
+      propertyPath: m_MageTowerUpgrade
+      value: 
+      objectReference: {fileID: 11400000, guid: d129642869f328942812c16f4313e415, type: 2}
+    - target: {fileID: 4557507656651781569, guid: 866ca3883b4f795429cc0b4dccef0fbf, type: 3}
+      propertyPath: m_TowerAssets.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4557507656651781569, guid: 866ca3883b4f795429cc0b4dccef0fbf, type: 3}
+      propertyPath: m_TowerAssets.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3997d8484c59bf141be3e09fc115e67f, type: 2}
+    - target: {fileID: 4557507656651781569, guid: 866ca3883b4f795429cc0b4dccef0fbf, type: 3}
+      propertyPath: m_TowerAssets.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 692b7a4d95142264a8b14db04326aa43, type: 2}
+    - target: {fileID: 4557507656651781569, guid: 866ca3883b4f795429cc0b4dccef0fbf, type: 3}
+      propertyPath: m_TowerAssets.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: f89f89a61dc02e54a8b41d8e982cd37c, type: 2}
     - target: {fileID: 4563903239381951502, guid: 866ca3883b4f795429cc0b4dccef0fbf, type: 3}
       propertyPath: m_SizeDelta.x
       value: 500

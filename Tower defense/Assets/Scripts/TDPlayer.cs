@@ -54,9 +54,8 @@ namespace TowerDefence
 
         [SerializeField] private UpgradeAsset healtUpgrade;
 
-        private new void Awake()
-        {
-            base.Awake();
+        private void Start()
+        {            
             var level = Upgrades.GetUpgradeLevel(healtUpgrade);
             TakeDamage(-level * 5);
         }
