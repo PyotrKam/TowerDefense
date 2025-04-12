@@ -23,7 +23,7 @@ namespace TowerDefence
                 }
                 else
                 {
-                    print("All waves dead");
+                    //print("All waves dead");
                     OnAllWavesDead?.Invoke();
                 }
             }

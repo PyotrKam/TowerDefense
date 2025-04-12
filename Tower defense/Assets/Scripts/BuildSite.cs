@@ -12,6 +12,10 @@ namespace TowerDefence
             if (towers == null || towers.Length == 0)
             {
                 Destroy(transform.parent.gameObject);
+                
+            }
+            else
+            {
                 buildableTowers = towers;
             }
            
@@ -25,7 +29,10 @@ namespace TowerDefence
 
         public virtual void OnPointerDown(PointerEventData eventData)
         {
-            OnClickEvent(this);
+            Debug.Log($"BuildSite clicked! Active: {gameObject.activeInHierarchy}");
+            Debug.Log("BuildSite clicked!");
+            OnClickEvent?.Invoke(this);
+            //OnClickEvent(this);
         }
     }
 

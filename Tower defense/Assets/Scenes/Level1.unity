@@ -1217,7 +1217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80ab9d0d54d8f1f408eceab03be57260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BuildableTowers: []
+  buildableTowers:
+  - {fileID: 11400000, guid: f35f4e7f013b89048af47dca284b1400, type: 2}
 --- !u!1 &894650102
 GameObject:
   m_ObjectHideFlags: 0
@@ -2972,6 +2973,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6986205575137437793, guid: 3bd0334d22b057040b02c0fc6acb1d1d, type: 3}
+      propertyPath: save.Array.data[0].level
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6986205575137437793, guid: 3bd0334d22b057040b02c0fc6acb1d1d, type: 3}
       propertyPath: save.Array.data[1].asset
       value: 
       objectReference: {fileID: 11400000, guid: d129642869f328942812c16f4313e415, type: 2}
@@ -3035,10 +3040,6 @@ PrefabInstance:
     - target: {fileID: 1682104405680678131, guid: be870f1deebcacb4dbd1350f5d983cb5, type: 3}
       propertyPath: m_Name
       value: buildSite
-      objectReference: {fileID: 0}
-    - target: {fileID: 1682104405680678131, guid: be870f1deebcacb4dbd1350f5d983cb5, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3633789870021128172, guid: be870f1deebcacb4dbd1350f5d983cb5, type: 3}
       propertyPath: m_LocalPosition.x

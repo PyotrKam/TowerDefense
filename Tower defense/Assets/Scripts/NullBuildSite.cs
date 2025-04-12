@@ -9,6 +9,7 @@ namespace TowerDefence
     {
         public override void OnPointerDown(PointerEventData eventData)
         {
+            Debug.Log("NullBuildSite clicked!");
             HideControls();
         }
     }

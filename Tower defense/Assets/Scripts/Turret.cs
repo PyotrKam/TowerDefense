@@ -73,7 +73,7 @@ namespace SpaceShooter
 
             m_CurrentFireRate = Mathf.Max(m_TurretProperties.RateOfFire * (1f - reduction), 0.05f);
 
-            Debug.Log($"Turret FireRate upgraded: {m_CurrentFireRate} (Level {upgradeLevel})");
+            //Debug.Log($"Turret FireRate upgraded: {m_CurrentFireRate} (Level {upgradeLevel})");
         }
 
 

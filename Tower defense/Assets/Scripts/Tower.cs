@@ -30,7 +30,7 @@ namespace TowerDefence
             
             ApplyRadiusUpgrade();
 
-            Debug.Log("Tower Radius: " + m_Radius);
+            //Debug.Log("Tower Radius: " + m_Radius);
         }
 
         //Trying
@@ -38,7 +38,7 @@ namespace TowerDefence
         {
             int upgradeLevel = Upgrades.GetUpgradeLevel(radiusUpgrade);
             m_Radius = 5.0f + upgradeLevel * 1.0f; 
-            Debug.Log("New Radius: " + m_Radius);
+            
         }
 
         private void Update()
