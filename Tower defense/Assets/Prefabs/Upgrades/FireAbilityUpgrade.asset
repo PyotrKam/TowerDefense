@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa4fdb58caa358340b41b4b86c1d49e9, type: 3}
-  m_Name: MageTowerUpgrade
+  m_Name: FireAbilityUpgrade
   m_EditorClassIdentifier: 
   sprite: {fileID: 924555589, guid: 54e2b9dbaf53d8841a362541dab48c55, type: 3}
   costByLevel: 010000000200000003000000

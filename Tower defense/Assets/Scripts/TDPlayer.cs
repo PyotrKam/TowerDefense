@@ -13,13 +13,34 @@ namespace TowerDefence
             }        
         }
 
-        private static event Action<int> OnGoldUpdate;        
+        private static event Action<int> OnGoldUpdate;
+        private static event Action<int> OnCrystalUpdate;
+        public static event Action<int> OnLifeUpdate;
+
+        [SerializeField] private int m_gold = 0;
+        [SerializeField] public int m_crystal;
+        public int m_defaultCrystals = 55;
+        private const string CrystalKey = "PlayerCrystals";
+
         public static void GoldUpdateSubscribe(Action<int> act)
         {
             OnGoldUpdate += act;
             act(Instance.m_gold);
         }
-        public static event Action<int> OnLifeUpdate;
+        //Trying 25.6
+        public static void CrystalUpdateSubscribe(Action<int> act)
+        {
+            if (OnCrystalUpdate == null)
+                OnCrystalUpdate = delegate { };
+
+            OnCrystalUpdate += act;
+
+            
+            if (Instance != null)
+            {
+                act(Instance.m_crystal);
+            }
+        }
 
         public static void LiveUpdateSubscribe(Action<int> act)
         {
@@ -27,20 +48,61 @@ namespace TowerDefence
             act(Instance.NumLives);
         }
 
+        protected override void Awake()
+        {
+            base.Awake();
 
-        [SerializeField] private int m_gold = 0;
-       
-               
+            bool isFirstLaunch = !PlayerPrefs.HasKey(CrystalKey);
+
+            if (isFirstLaunch)
+            {
+                m_crystal = m_defaultCrystals;
+                PlayerPrefs.SetInt(CrystalKey, m_crystal);
+                PlayerPrefs.Save();
+                Debug.Log($"First launch! Set crystals to {m_crystal}");
+            }
+            else
+            {
+                m_crystal = PlayerPrefs.GetInt(CrystalKey);
+
+                Debug.Log($"Loaded crystals: {m_crystal}");
+                
+                if (m_crystal == 0 && m_defaultCrystals > 0)
+                {
+                    m_crystal = m_defaultCrystals;
+                    PlayerPrefs.SetInt(CrystalKey, m_crystal);
+                    PlayerPrefs.Save();
+                    Debug.Log($"Auto-fixed zero crystals to {m_crystal}");
+                }
+            }
+
+        }
+
+
+
+
+
+
         public void ChangeGold(int change)
         {
             m_gold += change;
-            OnGoldUpdate(m_gold);
+            OnGoldUpdate?.Invoke(m_gold);
         }
         public void ReduceLife(int change)
         {
             TakeDamage(change);
             OnLifeUpdate(NumLives);
         }
+        public void ChangeCrystals(int change)
+        {
+            if (change == 0) return;
+
+            m_crystal = Mathf.Max(0, m_crystal + change);
+            PlayerPrefs.SetInt(CrystalKey, m_crystal);
+            PlayerPrefs.Save();
+            OnCrystalUpdate?.Invoke(m_crystal);
+        }
+
 
         [SerializeField] private Tower m_towerPrefab;
 
@@ -58,8 +120,15 @@ namespace TowerDefence
         {            
             var level = Upgrades.GetUpgradeLevel(healtUpgrade);
             TakeDamage(-level * 5);
-        }
+            m_crystal = PlayerPrefs.GetInt(CrystalKey, m_crystal);
+            Debug.Log($"In TDPlayer script {m_crystal}");
 
+
+            Debug.Log($"PlayerPrefs has key {CrystalKey}: {PlayerPrefs.HasKey(CrystalKey)}");
+            m_crystal = PlayerPrefs.GetInt(CrystalKey, 0);
+            Debug.Log($"Crystals after load: {m_crystal}");
+        }
+       
         public static void GoldUpdateUnsubscribe(Action<int> act)
         {
             OnGoldUpdate -= act;
@@ -67,6 +136,10 @@ namespace TowerDefence
         public static void LiveUpdateUnSubscribe(Action<int> act)
         {
             OnLifeUpdate -= act;
+        }
+        public static void CrystalUpdateUnsubscribe(Action<int> act)
+        {
+            OnCrystalUpdate -= act;
         }
 
     }

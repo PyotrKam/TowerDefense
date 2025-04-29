@@ -6,7 +6,7 @@ namespace TowerDefence
 {
     public class TextUpdate : MonoBehaviour
     {
-        public enum UpdateSource { Gold, Life }
+        public enum UpdateSource { Gold, Life, Crystal }
         public UpdateSource source = UpdateSource.Gold;
         private Text m_text;
 
@@ -24,7 +24,11 @@ namespace TowerDefence
 
                 case UpdateSource.Life:
                     TDPlayer.LiveUpdateSubscribe(UpdateText);
-                    break;                
+                    break;
+                case UpdateSource.Crystal:
+                    TDPlayer.CrystalUpdateSubscribe(UpdateText);
+                    break;
+
             }
             
         }
