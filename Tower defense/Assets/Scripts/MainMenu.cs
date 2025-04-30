@@ -16,6 +16,7 @@ namespace TowerDefence
         {
             FileHandler.Reset(MapCompletion.filename);
             FileHandler.Reset(Upgrades.filename);
+            PlayerPrefs.DeleteAll();
             SceneManager.LoadScene(1);
         }
 

@@ -1919,6 +1919,10 @@ PrefabInstance:
       propertyPath: m_NumLives
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 5154337552798444911, guid: d40b5458da1d89643b1e2028994173f1, type: 3}
+      propertyPath: m_defaultCrystals
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 7277874275202291533, guid: d40b5458da1d89643b1e2028994173f1, type: 3}
       propertyPath: m_Enabled
       value: 1
