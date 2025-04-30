@@ -63,15 +63,15 @@ namespace TowerDefence
 
             public void Use()
             {
-                print($"{_isActive}");
-                print($"CHECK {TDPlayer.Instance.m_crystal}");
+                //print($"{_isActive}");
+                //print($"CHECK {TDPlayer.Instance.m_crystal}");
                 if (_isActive == false || TDPlayer.Instance.m_crystal < m_Cost)
                 {
                     
                     return;
                 }
 
-                print("GOOOO to USE");
+                //print("GOOOO to USE");
                 TDPlayer.Instance.ChangeCrystals(-m_Cost);
 
                 ClickProtection.Instance.Activate((Vector2 v) =>
@@ -147,11 +147,24 @@ namespace TowerDefence
             public int Cost => m_Cost;
 
             //Trying 25.6
-            public void UpdateButtonState()
+            public void UpdateButtonState(int currentCrystals)
             {
                 if (_timeAbilityButton == null) return;
 
-                _timeAbilityButton.interactable = _isActive;
+                bool canBuy = currentCrystals >= m_Cost;
+
+                _timeAbilityButton.interactable = _isActive && canBuy;
+                if (_costText != null)
+                {
+                    if (canBuy)
+                    {
+                        _costText.color = Color.white;
+                    }
+                    else
+                    {
+                        _costText.color = Color.red;
+                    }
+                }
                 var buttonColors = _timeAbilityButton.colors;
                 buttonColors.disabledColor = new Color(1f, 1f, 1f, 0.5f);
                 _timeAbilityButton.colors = buttonColors;
@@ -174,10 +187,12 @@ namespace TowerDefence
             {
                 print($"{_isActive}");
 
-                if (_isActive == false)
+                if (_isActive == false || TDPlayer.Instance.m_crystal < m_Cost)
                 {
                     return;
                 }
+
+                TDPlayer.Instance.ChangeCrystals(-m_Cost);
 
                 void Slow(Enemy ship)
                 {
@@ -241,13 +256,13 @@ namespace TowerDefence
             {
                 _isActive = true;
                 print($"And now it is:............. {_isActive}");
-                UpdateButtonState();
+                UpdateButtonState(TDPlayer.Instance.m_crystal);
             }
 
             private void SetDeactivate()
             {
                 _isActive = false;
-                UpdateButtonState();
+                UpdateButtonState(TDPlayer.Instance.m_crystal);
             }
 
         }
@@ -265,8 +280,8 @@ namespace TowerDefence
         private void OnCrystalsChanged(int newCrystals)
         {
             m_FireAbility.UpdateButtonState(newCrystals);
-            //m_TimeAbility.UpdateButtonState(newCrystals);
-            Debug.LogWarning($"Crystals changed: {newCrystals}");
+            m_TimeAbility.UpdateButtonState(newCrystals);
+           // Debug.LogWarning($"Crystals changed: {newCrystals}");
         }
         private void Start()
         {
@@ -278,7 +293,7 @@ namespace TowerDefence
             m_FireAbility.UpdateButtonState(TDPlayer.Instance.m_crystal);
 
             m_TimeAbility.ApplyTimeAbilityUpgrade();
-            m_TimeAbility.UpdateButtonState();
+            m_TimeAbility.UpdateButtonState(TDPlayer.Instance.m_crystal);
 
            OnCrystalsChanged(TDPlayer.Instance.m_crystal);
         }
