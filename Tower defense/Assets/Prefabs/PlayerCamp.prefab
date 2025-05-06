@@ -52,9 +52,11 @@ MonoBehaviour:
   m_NumLives: 10
   m_Ship: {fileID: 0}
   m_PlayerShipPrefab: {fileID: 0}
-  m_gold: 1000
+  m_gold: 100
+  m_crystal: 0
   m_towerPrefab: {fileID: 4330943642748709882, guid: 73fdf7f5c9abfb247a79434b739cd7de, type: 3}
   healtUpgrade: {fileID: 11400000, guid: 523aa771e6ae6b24c826326c91826877, type: 2}
+  m_defaultCrystals: 55
 --- !u!114 &2040731675866613610
 MonoBehaviour:
   m_ObjectHideFlags: 0
