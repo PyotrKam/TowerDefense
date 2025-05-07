@@ -45,13 +45,13 @@ namespace TowerDefence
         {
             if (target)
             {
-                Vector2 targetVector = target.transform.position - transform.position;
+                //Vector2 targetVector = target.transform.position - transform.position;
 
-                if (targetVector.magnitude <= m_Radius)
+                if (Vector2.Distance(target.transform.position, transform.position) <= m_Radius)
                 {
                     foreach (var turret in turrets)
                     {
-                        turret.transform.up = targetVector;
+                        turret.transform.up = target.transform.position - turret.transform.position;
 
                         turret.Fire();
                     }

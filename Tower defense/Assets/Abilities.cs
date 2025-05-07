@@ -269,7 +269,7 @@ namespace TowerDefence
         private void OnEnable()
         {                       
          TDPlayer.CrystalUpdateSubscribe(OnCrystalsChanged);
-            Debug.LogWarning("Using OnEnable");
+            //Debug.LogWarning("Using OnEnable");
         }                
 
         private void OnDisable()
