@@ -54,6 +54,7 @@ namespace TowerDefence
 
         private void SpawnEnemies()
         {
+            
             foreach ((EnemyAsset asset, int count, int pathIndex) in currentWave.EnumerateSquads())
             {
                 if (pathIndex < paths.Length)
