@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using SpaceShooter;
+#if UNITY_EDITOR
 using UnityEditor;
+#endif
 using UnityEngine.UIElements;
 using System;
 
@@ -87,6 +89,7 @@ namespace TowerDefence
             m_destructible.ApplyDamage(ArmorDamageFunctions[(int)m_ArmorType](damage, damageType, m_armor));
         }
     }
+#if UNITY_EDITOR
 
     [CustomEditor(typeof(Enemy))]
     public class EnemyInspector : Editor
@@ -102,5 +105,7 @@ namespace TowerDefence
             }
         }
     }
+
+#endif
 }
 
