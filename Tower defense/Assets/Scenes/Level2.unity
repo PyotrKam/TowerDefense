@@ -2603,7 +2603,7 @@ MonoBehaviour:
   m_EnemyPrefab: {fileID: -2069825927851586324, guid: 7fa2367b9786a7747b22a41b86a3e3be, type: 3}
   m_path: {fileID: 1905566491}
   m_EnemyAssets:
-  - {fileID: 11400000, guid: b9f1d539067478840974e505ccfc1e05, type: 2}
+  - {fileID: 11400000, guid: f2b8762633d5d0d47838eab052df94b1, type: 2}
 --- !u!4 &2062872649
 Transform:
   m_ObjectHideFlags: 0

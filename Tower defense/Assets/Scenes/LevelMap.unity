@@ -448,8 +448,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_DoNotDestroyOnLoad: 0
-  m_Sounds: []
-  m_BGM: {fileID: 8300000, guid: 8fa64571068d10241ab1706e620768ee, type: 3}
+  m_Sounds: {fileID: 0}
+  m_BGM: {fileID: 8300000, guid: 65d47ffb93b7f314bb07c17066cf325b, type: 3}
 --- !u!224 &344201081 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3289426001735361924, guid: 4498d535b1e8c93438a20eebd4fd7157, type: 3}
